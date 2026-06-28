@@ -1,0 +1,21 @@
+# Local-only server override (never commit a localhost address). See host_local.example.lua
+host_local.lua
+
+# Iterative working backups from the rebrand session (regenerable; were ~1.7 GB)
+otcv8.zip.*
+*.theotbak
+_skin_backup/
+
+# Runtime logs / crash output
+*.log
+
+# OS cruft
+Thumbs.db
+.DS_Store
+
+# Design-handoff working files (kept locally; brand source lives in the main project _assets)
+_design_handoff/
+
+# Dev preview renders
+*_preview.png
+dlgwin_view.png
