@@ -14,6 +14,9 @@ function updateFeatures(version)
     
     -- you can add custom features here, list of them is in the modules\gamelib\const.lua
     g_game.enableFeature(GameBot)
+    -- Classic 8.60 damage text: show every hit as its own floating number instead of merging
+    -- rapid hits (e.g. the Divine Wave chain) into one accumulating total.
+    g_game.enableFeature(GameDontMergeAnimatedText)
     --g_game.enableFeature(GameExtendedOpcode)
     --g_game.enableFeature(GameMinimapLimitedToSingleFloor) -- it will generate minimap only for current floor
     --g_game.enableFeature(GameSpritesAlphaChannel)
