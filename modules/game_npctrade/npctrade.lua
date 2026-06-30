@@ -353,7 +353,13 @@ function refreshTradeItems()
   radioItems = UIRadioGroup.create()
 
   local currentTradeItems = tradeItems[getCurrentTradeType()]
-  for key,item in pairs(currentTradeItems) do
+  table.sort(currentTradeItems, function(a, b)
+    local aIsContainer = a.name:lower():find("backpack") ~= nil or a.name:lower():find(" bag") ~= nil
+    local bIsContainer = b.name:lower():find("backpack") ~= nil or b.name:lower():find(" bag") ~= nil
+    if aIsContainer ~= bIsContainer then return not aIsContainer end
+    return a.name < b.name
+  end)
+  for key,item in ipairs(currentTradeItems) do
     local itemBox = g_ui.createWidget('NPCItemBox', itemsPanel)
     itemBox.item = item
 
